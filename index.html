@@ -109,90 +109,10 @@ footer .ver{font-family:'Inter';font-size:11px;color:var(--faint);padding:5px 11
 @keyframes rise{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:none}}
 
 @media (max-width:720px){
-  /* Cabecalho */
   .head-top{flex-direction:column;align-items:flex-start;gap:10px}
   .head-bottom{text-align:left}
-
-  /* Tabela vira cards */
-  thead{display:none}
-  table,tbody,tr,th,td{display:block;width:100%}
-
-  tbody tr{padding:0;border-bottom:1px solid var(--line-strong)}
-  tbody tr:last-child{border-bottom:none}
-  tbody tr:hover{background:transparent}
-
-  /* Nome da meta */
-  tbody th{width:100%;border:none;padding:22px 22px 16px}
-  .mnum{font-size:17px}
-  .meta-desc{font-size:16px}
-
-  /* Linha label | valor: flex com justify space-between */
-  tbody td{
-    display:flex;
-    align-items:center;
-    justify-content:space-between;
-    gap:16px;
-    border:none;
-    border-top:1px solid rgba(255,255,255,.07);
-    padding:13px 22px;
-    font-size:17px;
-    font-weight:700;
-    text-align:right;
-  }
-  /* Label à esquerda */
-  tbody td::before{
-    content:attr(data-label);
-    font-family:'Sora',sans-serif;
-    font-weight:600;
-    font-size:10.5px;
-    letter-spacing:.13em;
-    text-transform:uppercase;
-    color:var(--faint);
-    flex-shrink:0;
-    text-align:left;
-    min-width:80px;
-  }
-  /* td-inner (valor + icone i) fica à direita */
-  tbody td .td-inner{
-    display:inline-flex;
-    align-items:center;
-    gap:6px;
-    margin-left:auto;
-  }
-  tbody td.vazio{color:var(--faint);font-weight:400}
-
-  /* Central destacada — linha inteira roxa */
-  tbody td.col-central{
-    background:rgba(168,85,247,.15)!important;
-    border-top:1.5px solid rgba(168,85,247,.6)!important;
-    border-bottom:1.5px solid rgba(168,85,247,.6)!important;
-    border-left:4px solid rgba(168,85,247,.9)!important;
-    border-right:none!important;
-    padding-left:18px;
-  }
-  tbody td.col-central::before{color:#c4a0f5}
-
-  /* Atingimento levemente maior */
-  tbody td.ating-col{font-size:18px;padding-bottom:20px}
-
-  /* Tooltip abre para baixo no mobile */
-  .tooltip{
-    top:calc(100% + 8px);
-    bottom:auto;
-    right:auto;
-    left:0;
-    width:210px;
-    transform:translateY(4px);
-  }
-  .tooltip::after{
-    top:-6px;
-    bottom:auto;
-    clip-path:polygon(50% 0,100% 100%,0 100%);
-  }
-  .info-wrap:hover .tooltip{transform:translateY(0)}
-
-  /* ⓘ maior e mais legível no mobile */
-  .info-btn{width:18px;height:18px;font-size:11px;border-width:1.5px}
+  .panel{overflow-x:auto;-webkit-overflow-scrolling:touch}
+  table{min-width:620px}
 }
 @media (max-width:560px){.wrap{padding:0 16px}footer{padding-bottom:32px}}
 @media (prefers-reduced-motion:reduce){*{animation:none!important}}
@@ -301,7 +221,7 @@ footer .ver{font-family:'Inter';font-size:11px;color:var(--faint);padding:5px 11
 
 <footer>
   <div class="upd">Gerado em <b>quarta-feira, 15/07/2026 às 20:32</b></div>
-  <div class="ver">painel v5.6</div>
+  <div class="ver">painel v5.7</div>
 </footer>
 </body>
 </html>
