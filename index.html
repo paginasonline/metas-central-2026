@@ -109,22 +109,60 @@ footer .ver{font-family:'Inter';font-size:11px;color:var(--faint);padding:5px 11
 @keyframes rise{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:none}}
 
 @media (max-width:720px){
+  /* Cabecalho */
   .head-top{flex-direction:column;align-items:flex-start;gap:10px}
   .head-bottom{text-align:left}
+
+  /* Tabela vira cards */
   thead{display:none}
   table,tbody,tr,th,td{display:block;width:100%}
-  tbody tr{padding:8px 4px 16px;border-bottom:1px solid var(--line-strong)}
-  tbody tr:hover{background:transparent}
+
+  /* Card de cada meta */
+  tbody tr{
+    padding:0;
+    border-bottom:1px solid var(--line-strong);
+  }
   tbody tr:last-child{border-bottom:none}
-  tbody th{width:100%;padding:16px 6px 12px;border:none}
-  tbody td{border:none;border-top:1px solid var(--line);text-align:right;padding:13px 6px;
-    display:flex;align-items:center;justify-content:space-between;font-size:18px}
-  tbody td::before{content:attr(data-label);font-family:'Sora',sans-serif;font-weight:600;font-size:12px;
-    letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}
-  tbody td.col-central{border-left:2.5px solid rgba(168,85,247,.6)!important;border-right:none!important;
-    background:rgba(168,85,247,.1);padding-left:12px;border-radius:0 8px 8px 0}
-  tbody td.col-central::before{color:#d8b4fe}
-  .tooltip{right:0;left:auto}
+  tbody tr:hover{background:transparent}
+
+  /* Cabecalho da meta: numero + nome */
+  tbody th{
+    width:100%;border:none;
+    padding:22px 22px 16px;
+  }
+  .meta-cell{gap:14px}
+  .mnum{font-size:18px}
+  .meta-desc{font-size:16px}
+
+  /* Linha de dado: label à esquerda, valor à direita */
+  tbody td{
+    display:flex;align-items:center;justify-content:space-between;
+    border:none;border-top:1px solid rgba(255,255,255,.07);
+    padding:14px 22px;font-size:17px;font-weight:700;
+  }
+  tbody td::before{
+    content:attr(data-label);
+    font-family:'Sora',sans-serif;font-weight:600;font-size:10.5px;
+    letter-spacing:.14em;text-transform:uppercase;
+    color:var(--faint);flex-shrink:0;
+  }
+  tbody td.vazio{color:var(--faint);font-weight:400}
+
+  /* Central em destaque */
+  tbody td.col-central{
+    background:rgba(168,85,247,.10);
+    border-left:3px solid rgba(168,85,247,.65)!important;
+    border-right:none!important;
+    padding-left:19px;
+  }
+  tbody td.col-central::before{color:#c4a0f5;letter-spacing:.14em}
+
+  /* % Atingimento levemente maior */
+  tbody td.ating-col{font-size:19px;padding-bottom:18px}
+
+  /* Tooltip alinhado à direita */
+  .td-inner{display:inline-flex;align-items:center;gap:6px}
+  .tooltip{right:0;left:auto;bottom:calc(100% + 8px);width:220px}
 }
 @media (max-width:560px){.wrap{padding:0 16px}footer{padding-bottom:32px}}
 @media (prefers-reduced-motion:reduce){*{animation:none!important}}
@@ -232,8 +270,8 @@ footer .ver{font-family:'Inter';font-size:11px;color:var(--faint);padding:5px 11
 </div>
 
 <footer>
-  <div class="upd">Gerado em <b>quarta-feira, 15/07/2026 às 19:50</b></div>
-  <div class="ver">painel v4.9</div>
+  <div class="upd">Gerado em <b>quarta-feira, 15/07/2026 às 20:21</b></div>
+  <div class="ver">painel v5.1</div>
 </footer>
 </body>
 </html>
